@@ -1,5 +1,5 @@
 .App {
-  max-width: 90vw;
+  /* max-width: 95vw; */
   margin: 0 auto;
 }
 body {
@@ -15,7 +15,6 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  transition: top 0.2s ease-in-out;
   background-color: #1c7ac2;
 }
 
