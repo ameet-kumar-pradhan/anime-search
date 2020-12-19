@@ -1,38 +1,131 @@
 .App {
-  text-align: center;
+  max-width: 90vw;
+  margin: 0 auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #1c7ac2;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 2rem 0;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  align-content: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.2s ease-in-out;
+  background-color: #1c7ac2;
+}
+
+input[type='text'] {
+  min-width: 60vw;
+  outline: 0;
+  padding: 1rem 0.75rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  border: #f2f2f2;
+  position: relative;
+}
+.cards {
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 4rem;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin: 2rem;
+  background-color: #ffff;
+  border-radius: 0.5rem;
+  width: 20%;
+  height: auto;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.image-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(white, 0.15);
+  background-blend-mode: overlay;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 25rem;
+}
+
+.card-title {
+  /* padding-top: 2rem; */
+  display: flex;
+  justify-content: center;
+  word-wrap: normal;
+}
+
+.load-more {
+  background-color: #ffff;
+  border: none;
+  color: black;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.submit-btn {
+  height: 100%;
+  background-color: #ffff;
+  border: none;
+  color: black;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  cursor: pointer;
+  margin-left: 2rem;
+}
+
+.submit-div {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .cards {
+    padding-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 2rem;
+    background-color: #ffff;
+    border-radius: 0.5rem;
+    width: 90%;
+    height: auto;
+    cursor: pointer;
   }
+}
+a {
+  text-decoration: none;
+  color: black;
 }
