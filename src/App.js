@@ -10,7 +10,6 @@ import { getAnimeList, getMoreList } from './redux/actionCreators';
 function App(props) {
   const { animeList, getAnimeList, getMoreList } = props;
   const [keyword, setKeyword] = useState('naruto');
-  const [page, setPage] = useState(1);
 
   useEffect(() => {
     getAnimeList(keyword);
@@ -21,11 +20,10 @@ function App(props) {
     getAnimeList(keyword);
   };
 
-  useEffect(() => {
-    getMoreList(keyword, page);
-  }, [page]);
-  const loadMore = () => {
-    setPage(page + 1);
+  const loadMoreAnime = () => {
+    let counter = 1;
+    counter += 1;
+    getMoreList(keyword, counter);
   };
   return (
     <div className='App'>
@@ -65,7 +63,7 @@ function App(props) {
       </div>
       {animeList.length ? (
         <div className='submit-div'>
-          <button onClick={() => loadMore()} className='load-more'>
+          <button onClick={() => loadMoreAnime()} className='load-more'>
             Load More
           </button>
         </div>
