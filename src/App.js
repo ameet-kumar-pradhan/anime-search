@@ -10,6 +10,7 @@ import { getAnimeList, getMoreList } from './redux/actionCreators';
 function App(props) {
   const { animeList, getAnimeList, getMoreList } = props;
   const [keyword, setKeyword] = useState('naruto');
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     getAnimeList(keyword);
@@ -17,14 +18,20 @@ function App(props) {
 
   const formSubmit = e => {
     e.preventDefault();
+    setPage(1);
     getAnimeList(keyword);
   };
 
   const loadMoreAnime = () => {
-    let counter = 1;
-    counter += 1;
-    getMoreList(keyword, counter);
+    setPage(page + 1);
   };
+
+  useEffect(() => {
+    if (animeList.length) {
+      getMoreList(keyword, page);
+    }
+  }, [page]);
+
   return (
     <div className='App'>
       <header className='App-header'>

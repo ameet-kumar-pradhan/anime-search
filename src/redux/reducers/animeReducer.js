@@ -9,7 +9,7 @@ export const animeReducer = (state = initialState, action) => {
         case FETCH_ANIME_LIST:
             return { ...state, animeList: [...action.payload] }
         case LOAD_MORE:
-            return { ...state, animeList: [...state.animeList, ...action.payload] }
+            return { state, animeList: [...state.animeList, ...action.payload] }
         default:
             return state
     }
